@@ -4,187 +4,236 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Akshit Manhas | Portfolio</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         :root {
-            --primary: #2563eb;
+            --primary: #0a66c2; /* LinkedIn Blue */
             --dark: #1e293b;
-            --light: #f8fafc;
-            --text: #334155;
+            --light: #f3f2ef; /* LinkedIn Background Grey */
+            --text: #333333;
+            --white: #ffffff;
         }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-        }
-
         body {
-            background-color: var(--light);
-            color: var(--text);
+            font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell, "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;
             line-height: 1.6;
+            color: var(--text);
+            margin: 0;
+            background-color: var(--light);
+        }
+        .container {
+            max-width: 800px; /* Slightly narrower to match LinkedIn feed width */
+            margin: 0 auto;
+            padding: 20px;
         }
 
-        /* Header / Hero Section */
+        /* --- LinkedIn Style Header --- */
         header {
-            background-color: white;
-            padding: 4rem 2rem;
-            text-align: center;
-            border-bottom: 1px solid #e2e8f0;
+            background: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 0 0 1px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.05);
+            margin-bottom: 20px;
+            overflow: hidden;
+            position: relative;
+            text-align: left; /* LinkedIn aligns left */
+            padding-bottom: 20px;
+        }
+
+        /* The Cover Banner */
+        .cover-photo {
+            height: 150px;
+            background: linear-gradient(135deg, #0077b5, #00a0dc);
+            width: 100%;
+        }
+
+        .header-content {
+            padding: 0 25px;
+            position: relative;
+        }
+
+        /* Profile Image - Overlapping the banner */
+        .profile-img {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--white);
+            margin-top: -80px; /* Pulls it up into the banner */
+            margin-bottom: 15px;
         }
 
         h1 {
-            font-size: 2.5rem;
-            color: var(--dark);
-            margin-bottom: 0.5rem;
+            color: rgba(0,0,0,0.9);
+            margin: 0;
+            font-size: 1.8rem;
+            font-weight: 600;
         }
 
-        .subtitle {
-            font-size: 1.2rem;
-            color: var(--primary);
-            font-weight: 500;
-            margin-bottom: 1.5rem;
+        .headline {
+            color: rgba(0,0,0,0.9);
+            font-size: 1.1rem;
+            margin-bottom: 5px;
         }
 
-        .contact-info {
+        .location {
+            color: #777;
             font-size: 0.9rem;
-            color: #64748b;
+            margin-bottom: 15px;
         }
 
-        .contact-info a {
-            color: var(--primary);
+        .contact-row {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
             text-decoration: none;
-            margin: 0 10px;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
         }
-
-        /* Main Container */
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 2rem;
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+            border: 1px solid var(--primary);
         }
+        .btn-primary:hover { background-color: #004182; }
 
+        .btn-secondary {
+            background-color: white;
+            color: #555;
+            border: 1px solid #555;
+        }
+        .btn-secondary:hover { background-color: #f3f2ef; border-color: #333; color: #333;}
+
+        /* --- Sections (Card Style) --- */
         section {
-            background: white;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            background: var(--white);
+            padding: 25px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 0 1px rgba(0,0,0,0.08);
         }
 
         h2 {
-            font-size: 1.5rem;
-            color: var(--dark);
-            border-bottom: 2px solid var(--primary);
-            padding-bottom: 0.5rem;
-            margin-bottom: 1.5rem;
-            display: inline-block;
+            font-size: 1.25rem;
+            color: rgba(0,0,0,0.9);
+            margin-top: 0;
+            margin-bottom: 15px;
         }
 
-        /* Experience & Projects Items */
-        .item {
-            margin-bottom: 1.5rem;
+        /* About Section Text */
+        .about-text {
+            font-size: 0.95rem;
+            color: rgba(0,0,0,0.9);
+            white-space: pre-line; /* Preserves paragraphs */
         }
+
+        /* Experience Items */
+        .item {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        .item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
 
         .item-header {
             display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            flex-wrap: wrap;
-            margin-bottom: 0.5rem;
+            gap: 15px;
         }
-
-        .item-title {
-            font-weight: 700;
-            font-size: 1.1rem;
-            color: var(--dark);
-        }
-
-        .item-date {
-            color: #64748b;
-            font-size: 0.9rem;
-        }
-
-        ul {
-            list-style-position: inside;
-            margin-left: 0.5rem;
-        }
-
-        li {
-            margin-bottom: 0.5rem;
-        }
-
-        /* Skills Tags */
-        .skills-grid {
+        .company-logo-placeholder {
+            width: 48px;
+            height: 48px;
+            background: #f3f2ef;
             display: flex;
-            flex-wrap: wrap;
-            gap: 0.8rem;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #666;
         }
+        .item-details h3 { margin: 0; font-size: 1rem; color: rgba(0,0,0,0.9); }
+        .item-details .company { font-size: 0.9rem; color: rgba(0,0,0,0.9); }
+        .item-details .date { font-size: 0.85rem; color: #666; margin-top: 2px; }
+        .item-desc { font-size: 0.9rem; margin-top: 10px; color: rgba(0,0,0,0.9); }
 
-        .skill-tag {
-            background-color: #e0f2fe;
-            color: #0369a1;
-            padding: 0.4rem 0.8rem;
+        /* Skills Chips */
+        .skill-category { margin-bottom: 15px; }
+        .skill-category-title { font-size: 0.9rem; font-weight: bold; color: #666; margin-bottom: 8px; text-transform: uppercase;}
+        .tags span {
+            background: white;
+            border: 1px solid #666;
+            color: #444;
+            padding: 6px 12px;
             border-radius: 20px;
             font-size: 0.9rem;
-            font-weight: 500;
-        }
-
-        /* Button */
-        .btn {
+            margin-right: 8px;
             display: inline-block;
-            background-color: var(--primary);
-            color: white;
-            padding: 0.8rem 1.5rem;
-            border-radius: 5px;
-            text-decoration: none;
+            margin-bottom: 8px;
             font-weight: 600;
-            margin-top: 1rem;
-            transition: background 0.2s;
         }
 
-        .btn:hover {
-            background-color: #1d4ed8;
+        /* Project & Sports Cards (Visuals) */
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
         }
+        .visual-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .visual-img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            background: #eee;
+        }
+        .visual-content { padding: 15px; }
+        .visual-title { font-weight: 600; margin-bottom: 5px; color: var(--primary); }
+        .visual-desc { font-size: 0.85rem; color: #444; }
 
-        /* Responsive */
-        @media (max-width: 600px) {
-            h1 { font-size: 2rem; }
-            .item-header { flex-direction: column; }
-        }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Akshit Manhas</h1>
-        <div class="subtitle">Biotechnology Student | Quality Assurance | Athlete</div>
-        <div class="contact-info">
-            📍 Palampur, HP • 📞 +91 86268-30956
-            <br>
-            <a href="mailto:akshitmanhas.fam@gmail.com">akshitmanhas.fam@gmail.com</a> •
-            <a href="https://www.linkedin.com/in/akshit-manhas-621115280" target="_blank">LinkedIn Profile</a>
+        <div class="cover-photo">
+            </div>
+
+        <div class="header-content">
+            <img src="https://via.placeholder.com/160" alt="Akshit Manhas" class="profile-img">
+
+            <h1>Akshit Manhas</h1>
+            <div class="headline">Biotech Engineer | Python Developer | Sports Enthusiast | LPU '27</div>
+            <div class="location">Palampur, Himachal Pradesh, India</div>
+
+            <div class="contact-row">
+                <a href="https://www.linkedin.com/in/akshit-manhas-621115280" target="_blank" class="btn btn-primary">
+                    <i class="fab fa-linkedin"></i> Connect on LinkedIn
+                </a>
+                <a href="mailto:akshitmanhas.fam@gmail.com" class="btn btn-secondary">
+                    <i class="fas fa-envelope"></i> Message
+                </a>
+            </div>
         </div>
-        <a href="mailto:akshitmanhas.fam@gmail.com" class="btn">Hire Me</a>
     </header>
 
     <div class="container">
 
         <section>
-            <h2>About Me</h2>
-            <p>Motivated Biotechnology student (Class of 2027) at LPU with practical industry experience in Quality Assurance. Skilled in microbiological testing, media preparation, and food safety standards. Passionate about applying scientific principles to real-world problems. Proven track record of discipline and teamwork through competitive football and basketball.</p>
-        </section>
+            <h2>About</h2>
+            <div class="about-text">
+                I am an enthusiastic B.Tech Biotechnology student with a unique drive to bridge the gap between Life Sciences and Engineering. I don't just study biology; I look for ways to apply logic, data, and software to solve biological problems.
 
-        <section>
-            <h2>Skills</h2>
-            <div class="skills-grid">
-                <span class="skill-tag">Microbiology</span>
-                <span class="skill-tag">Quality Control (QC)</span>
-                <span class="skill-tag">Media Preparation</span>
-                <span class="skill-tag">Food Safety (HACCP)</span>
-                <span class="skill-tag">Aseptic Techniques</span>
-                <span class="skill-tag">Python (Basic)</span>
-                <span class="skill-tag">Team Leadership</span>
+                I am passionate about Rational Drug Design, Bioinformatics, and Python development. Whether I am analyzing phylogenetic trees or writing code for a health monitoring system, I bring an engineer's precision to every task.
+
+                Beyond academics, I am a disciplined athlete. My background in competitive Football and NCC training has taught me leadership, stamina, and the value of showing up every single day. I am constantly learning, building, and looking for the next challenge.
             </div>
         </section>
 
@@ -192,65 +241,84 @@
             <h2>Experience</h2>
             <div class="item">
                 <div class="item-header">
-                    <span class="item-title">Quality & Production Intern @ Verka Milk Plant</span>
-                    <span class="item-date">Jun 2025 – Jul 2025</span>
+                    <div class="company-logo-placeholder"><i class="fas fa-flask"></i></div>
+                    <div class="item-details">
+                        <h3>Quality & Production Intern</h3>
+                        <div class="company">Verka Milk Plant</div>
+                        <div class="date">Jun 2025 – Jul 2025</div>
+                    </div>
                 </div>
-                <ul>
-                    <li>Conducted daily quality control tests on dairy products (Acidity, Fat%, SNF).</li>
-                    <li>Calibrated and maintained laboratory equipment to ensure testing accuracy.</li>
-                    <li>Ensured compliance with pasteurization and hygiene standards.</li>
-                    <li>Maintained documentation and supported SOP adherence.</li>
-                </ul>
+                <div class="item-desc">
+                    • Conducted daily quality control tests (Acidity, Fat%, SNF) to ensure food safety.<br>
+                    • Managed documentation and SOP compliance in a high-volume production environment.<br>
+                    • Assisted in instrument calibration and maintained strict hygiene standards.
+                </div>
             </div>
         </section>
 
         <section>
-            <h2>Projects</h2>
-            <div class="item">
-                <div class="item-header">
-                    <span class="item-title">Machine Learning for Healthcare Diagnostics</span>
-                    <span class="item-date">Apr 2025</span>
+            <h2>Skills</h2>
+
+            <div class="skill-category">
+                <div class="skill-category-title">Core Biotechnology</div>
+                <div class="tags">
+                    <span>Microbiology</span>
+                    <span>Media Preparation</span>
+                    <span>Aseptic Technique</span>
+                    <span>Food Quality Testing</span>
+                    <span>Rational Drug Design</span>
                 </div>
-                <p>Analyzed biomedical datasets to build predictive models for identifying health patterns.</p>
             </div>
-            <div class="item">
-                <div class="item-header">
-                    <span class="item-title">Arduino-Based Health Monitoring System</span>
-                    <span class="item-date">2023</span>
+
+            <div class="skill-category">
+                <div class="skill-category-title">Engineering & Tech</div>
+                <div class="tags">
+                    <span>Python</span>
+                    <span>Data Analysis</span>
+                    <span>C / C++</span>
+                    <span>Machine Learning</span>
+                    <span>Arduino / IoT</span>
                 </div>
-                <p>Led a 3-member team to build a real-time biosignal monitoring prototype.</p>
             </div>
         </section>
 
         <section>
-            <h2>Education</h2>
-            <div class="item">
-                <div class="item-header">
-                    <span class="item-title">B.Tech Biotechnology</span>
-                    <span class="item-date">2023 – 2027</span>
+            <h2>Featured Projects</h2>
+            <div class="grid-cards">
+                <div class="visual-card">
+                    <img src="https://via.placeholder.com/300x160?text=ML+Healthcare" alt="Project 1" class="visual-img">
+                    <div class="visual-content">
+                        <div class="visual-title">ML for Healthcare Diagnostics</div>
+                        <div class="visual-desc">Built predictive models using Python to identify health patterns in biomedical datasets.</div>
+                    </div>
                 </div>
-                <p>Lovely Professional University, Punjab</p>
-                <p><strong>GPA:</strong> 8.18</p>
+                <div class="visual-card">
+                    <img src="https://via.placeholder.com/300x160?text=Arduino+System" alt="Project 2" class="visual-img">
+                    <div class="visual-content">
+                        <div class="visual-title">Arduino Health Monitor</div>
+                        <div class="visual-desc">Led a team to create a real-time biosignal monitoring prototype with C++ and sensors.</div>
+                    </div>
+                </div>
             </div>
         </section>
 
         <section>
-            <h2>Sports & Leadership</h2>
-            <div class="item">
-                <div class="item-header">
-                    <span class="item-title">Football & Basketball</span>
+            <h2>Volunteering & Sports</h2>
+            <div class="grid-cards">
+                <div class="visual-card">
+                     <img src="https://via.placeholder.com/300x160?text=Football+Team" alt="Football" class="visual-img">
+                    <div class="visual-content">
+                        <div class="visual-title">Football Player (LPU)</div>
+                        <div class="visual-desc">Secured 3rd position in General Sports Championship. Demonstrated strategic teamwork.</div>
+                    </div>
                 </div>
-                <ul>
-                    <li><strong>Football:</strong> Team secured 3rd position in LPU General Sports Championship.</li>
-                    <li><strong>Basketball:</strong> Tournament Winner at CATC NCC Camp.</li>
-                    <li><strong>Traits:</strong> High physical endurance, strategic planning, and disciplined teamwork.</li>
-                </ul>
-            </div>
-            <div class="item">
-                <div class="item-header">
-                    <span class="item-title">NCC 'B' Certificate</span>
+                <div class="visual-card">
+                    <img src="https://via.placeholder.com/300x160?text=NCC+Cadet" alt="NCC" class="visual-img">
+                    <div class="visual-content">
+                        <div class="visual-title">NCC 'B' Certificate</div>
+                        <div class="visual-desc">Trained in military discipline, leadership, and community service.</div>
+                    </div>
                 </div>
-                <p>Trained in military drill, leadership, and hygiene awareness.</p>
             </div>
         </section>
 
