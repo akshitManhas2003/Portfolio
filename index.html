@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akshit Manhas | Portfolio</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --text: #334155;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* Header / Hero Section */
+        header {
+            background-color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--primary);
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-info {
+            font-size: 0.9rem;
+            color: #64748b;
+        }
+
+        .contact-info a {
+            color: var(--primary);
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        section {
+            background: white;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            color: var(--dark);
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+        }
+
+        /* Experience & Projects Items */
+        .item {
+            margin-bottom: 1.5rem;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            margin-bottom: 0.5rem;
+        }
+
+        .item-title {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--dark);
+        }
+
+        .item-date {
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+
+        ul {
+            list-style-position: inside;
+            margin-left: 0.5rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Skills Tags */
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .skill-tag {
+            background-color: #e0f2fe;
+            color: #0369a1;
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* Button */
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 1rem;
+            transition: background 0.2s;
+        }
+
+        .btn:hover {
+            background-color: #1d4ed8;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            h1 { font-size: 2rem; }
+            .item-header { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Akshit Manhas</h1>
+        <div class="subtitle">Biotechnology Student | Quality Assurance | Athlete</div>
+        <div class="contact-info">
+            📍 Palampur, HP • 📞 +91 86268-30956
+            <br>
+            <a href="mailto:akshitmanhas.fam@gmail.com">akshitmanhas.fam@gmail.com</a> •
+            <a href="https://www.linkedin.com/in/akshit-manhas-621115280" target="_blank">LinkedIn Profile</a>
+        </div>
+        <a href="mailto:akshitmanhas.fam@gmail.com" class="btn">Hire Me</a>
+    </header>
+
+    <div class="container">
+
+        <section>
+            <h2>About Me</h2>
+            <p>Motivated Biotechnology student (Class of 2027) at LPU with practical industry experience in Quality Assurance. Skilled in microbiological testing, media preparation, and food safety standards. Passionate about applying scientific principles to real-world problems. Proven track record of discipline and teamwork through competitive football and basketball.</p>
+        </section>
+
+        <section>
+            <h2>Skills</h2>
+            <div class="skills-grid">
+                <span class="skill-tag">Microbiology</span>
+                <span class="skill-tag">Quality Control (QC)</span>
+                <span class="skill-tag">Media Preparation</span>
+                <span class="skill-tag">Food Safety (HACCP)</span>
+                <span class="skill-tag">Aseptic Techniques</span>
+                <span class="skill-tag">Python (Basic)</span>
+                <span class="skill-tag">Team Leadership</span>
+            </div>
+        </section>
+
+        <section>
+            <h2>Experience</h2>
+            <div class="item">
+                <div class="item-header">
+                    <span class="item-title">Quality & Production Intern @ Verka Milk Plant</span>
+                    <span class="item-date">Jun 2025 – Jul 2025</span>
+                </div>
+                <ul>
+                    <li>Conducted daily quality control tests on dairy products (Acidity, Fat%, SNF).</li>
+                    <li>Calibrated and maintained laboratory equipment to ensure testing accuracy.</li>
+                    <li>Ensured compliance with pasteurization and hygiene standards.</li>
+                    <li>Maintained documentation and supported SOP adherence.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>Projects</h2>
+            <div class="item">
+                <div class="item-header">
+                    <span class="item-title">Machine Learning for Healthcare Diagnostics</span>
+                    <span class="item-date">Apr 2025</span>
+                </div>
+                <p>Analyzed biomedical datasets to build predictive models for identifying health patterns.</p>
+            </div>
+            <div class="item">
+                <div class="item-header">
+                    <span class="item-title">Arduino-Based Health Monitoring System</span>
+                    <span class="item-date">2023</span>
+                </div>
+                <p>Led a 3-member team to build a real-time biosignal monitoring prototype.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Education</h2>
+            <div class="item">
+                <div class="item-header">
+                    <span class="item-title">B.Tech Biotechnology</span>
+                    <span class="item-date">2023 – 2027</span>
+                </div>
+                <p>Lovely Professional University, Punjab</p>
+                <p><strong>GPA:</strong> 8.18</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Sports & Leadership</h2>
+            <div class="item">
+                <div class="item-header">
+                    <span class="item-title">Football & Basketball</span>
+                </div>
+                <ul>
+                    <li><strong>Football:</strong> Team secured 3rd position in LPU General Sports Championship.</li>
+                    <li><strong>Basketball:</strong> Tournament Winner at CATC NCC Camp.</li>
+                    <li><strong>Traits:</strong> High physical endurance, strategic planning, and disciplined teamwork.</li>
+                </ul>
+            </div>
+            <div class="item">
+                <div class="item-header">
+                    <span class="item-title">NCC 'B' Certificate</span>
+                </div>
+                <p>Trained in military drill, leadership, and hygiene awareness.</p>
+            </div>
+        </section>
+
+    </div>
+
+</body>
+</html>
